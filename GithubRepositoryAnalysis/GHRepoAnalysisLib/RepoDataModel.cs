@@ -14,7 +14,7 @@ public class RepoDataModel
     public string full_name { get; set; }
 
     public string description { get; set; }
-    public string Html_Url { get; set; }
+    public string html_url { get; set; }
     public string language { get; set; }
     public int forks_count { get; set; }
     public int stargazers_count { get; set; }

@@ -17,29 +17,31 @@ namespace GithubAnalyzer
         {
             Console.WriteLine("Hello GitHub Analyzer!");
 
-            // if(args.Length !=2)
-            // {
-            //     System.Console.WriteLine("Two Argument Extected ");
-            //     System.Console.WriteLine("First Extected Argument ist Github User Name ");
-            //     System.Console.WriteLine("Second Extected Argument ist the Repository Name ");
+            if(args.Length !=2)
+            {
+                System.Console.WriteLine("Two Argument Extected ");
+                System.Console.WriteLine("First Extected Argument ist Github User Name ");
+                System.Console.WriteLine("Second Extected Argument ist the Repository Name ");
 
-            //     return;
+                return;
 
-            // }
+            }
 
-            var username = "octocat";  //args[0]; for debuging 
-            var reponame ="hello-world" ;  //args[1] for debuging
+            var username = args[0];  
+            var reponame = args[1];
 
 
-            
+            // get the Repository Data
             var modelDataLoder = new ModelDataLoder(username , reponame);
             modelDataLoder.RepoDataModelloader();
             modelDataLoder.IssuePullDataModelLoader();
             modelDataLoder.BranchesModelDataLoader();
             modelDataLoder.ContributorModelDataLoader();
 
-            var gHHelper= new GHApiHelper();
-            gHHelper.GetHashCode();
+            //Convert to Csv 
+            var repotoCsv = new GHApiHelper();
+            repotoCsv.RepoDataToCsv();
+            
             
 
         }
