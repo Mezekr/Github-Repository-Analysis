@@ -1,6 +1,6 @@
 #Github-Repository-Analysis
 
-dotnet run -- octocat hello-world
+
 
 This program is designed to analyze and visualize a GitHub repository.
 It accepts the full repository name, i.e. user and repository name in the command line.
